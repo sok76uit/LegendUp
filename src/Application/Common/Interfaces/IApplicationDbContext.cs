@@ -1,0 +1,12 @@
+﻿using LegendUp.Domain.Entities;
+
+namespace LegendUp.Application.Common.Interfaces;
+
+public interface IApplicationDbContext
+{
+    DbSet<TodoList> TodoLists { get; }
+
+    DbSet<TodoItem> TodoItems { get; }
+
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+}
